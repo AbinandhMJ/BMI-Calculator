@@ -15,13 +15,20 @@ const welcome = document.getElementById('welcome');
 
 const metricBtn = document.getElementById('metric');
 const imperialBtn = document.getElementById('imperial');
+const calculateBtn = document.getElementById('calculate-btn');
+const resetBtn = document.getElementById('reset-btn');
+const errorMsg = document.getElementById('error-msg');
 
 function calculateBMI(e) {
+  errorMsg.innerText = ""; 
   console.log(metricBtn.classList);
   if (metricBtn.classList.contains('active')) {
     const height = heightEl.value;
     const weight = weightEl.value;
-
+  if (!height || !weight || height <= 0 || weight <= 0) {
+  errorMsg.innerText = "Please enter valid height and weight";
+  return;
+  }
     bmiEl.style.display = 'flex';
     welcome.style.display = 'none';
 
@@ -42,22 +49,33 @@ function calculateBMI(e) {
     minWeight.innerText = `${min}kgs`;
     maxWeight.innerText = `${max}kgs`;
 
-    if (bmi < 18.5) {
-      classification.innerText = 'Underweight';
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
-      classification.innerText = 'Healthy weight';
-    } else if (bmi > 24.9 && bmi <= 29.9) {
-      classification.innerText = 'Overweight';
-    } else {
-      classification.innerText = 'Obese';
-    }
+    let advice = "";
 
+if (bmi < 18.5) {
+  classification.innerText = 'Underweight';
+  advice = "You should eat more nutritious food.";
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+  classification.innerText = 'Healthy weight';
+  advice = "Great job! Maintain your lifestyle.";
+} else if (bmi > 24.9 && bmi <= 29.9) {
+  classification.innerText = 'Overweight';
+  advice = "Consider regular exercise.";
+} else {
+  classification.innerText = 'Obese';
+  advice = "Consult a doctor and follow a healthy plan.";
+}
+
+document.getElementById("advice").innerText = advice;
     console.log('test');
   } else {
     const feet = parseInt(feetEl.value);
     const inch = parseInt(inchEl.value);
     const st = parseInt(stEl.value);
     const lbs = parseInt(lbsEl.value);
+    if (!feet || !inch || !st || !lbs) {
+  errorMsg.innerText = "Please enter all required values";
+  return;
+  }
 
     bmiEl.style.display = 'flex';
     welcome.style.display = 'none';
@@ -93,15 +111,23 @@ function calculateBMI(e) {
     minWeight.innerText = `${minWeightInStone}st ${minWeightInPounds}lbs`
     maxWeight.innerText = `${maxWeightInStone}st ${maxWeightInPounds}lbs`
 
-    if (bmi < 18.5) {
-      classification.innerText = 'Underweight';
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
-      classification.innerText = 'Healthy weight';
-    } else if (bmi > 24.9 && bmi <= 29.9) {
-      classification.innerText = 'Overweight';
-    } else {
-      classification.innerText = 'Obese';
-    }
+    let advice = "";
+
+if (bmi < 18.5) {
+  classification.innerText = 'Underweight';
+  advice = "You should eat more nutritious food.";
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+  classification.innerText = 'Healthy weight';
+  advice = "Great job! Maintain your lifestyle.";
+} else if (bmi > 24.9 && bmi <= 29.9) {
+  classification.innerText = 'Overweight';
+  advice = "Consider regular exercise.";
+} else {
+  classification.innerText = 'Obese';
+  advice = "Consult a doctor and follow a healthy plan.";
+}
+
+document.getElementById("advice").innerText = advice;
   }
 }
 
@@ -170,3 +196,25 @@ window.addEventListener('resize', e=> {
     document.querySelector('.metric').style.display = 'flex'
   }
 })
+calculateBtn.addEventListener('click', () => {
+
+  errorMsg.innerText = '';
+
+  if (metricBtn.classList.contains('active')) {
+
+    if (heightEl.value === '' || weightEl.value === '') {
+      errorMsg.innerText = "⚠️ Please enter height and weight!";
+      return;
+    }
+
+  } else {
+
+    if (feetEl.value === '' || inchEl.value === '' || stEl.value === '' || lbsEl.value === '') {
+      errorMsg.innerText = "⚠️ Please fill all fields!";
+      return;
+    }
+
+  }
+
+  calculateBMI();
+});
