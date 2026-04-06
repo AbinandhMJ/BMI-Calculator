@@ -777,3 +777,49 @@ input[type='radio'].active::after {
     height: 232px;
   }
 }
+/* Button container */
+.btns {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Common button style */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Calculate Button (Primary) */
+.calculate {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.calculate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* Reset Button (Secondary) */
+.reset {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.reset:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+/* Click effect */
+.btn:active {
+  transform: scale(0.96);
+}

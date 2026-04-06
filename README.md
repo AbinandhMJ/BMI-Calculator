@@ -1,50 +1,89 @@
-# BMI Calculator
-This BMI (Body Mass Index) calculator is a web application built using HTML, CSS, Bootstrap 5, and JavaScript. It allows users to quickly and easily calculate their BMI based on their height and weight. BMI is a simple way to determine if a person's weight is within a healthy range relative to their height.
+# 🧮 BMI Calculator Web App
 
-## Features
-- Input fields for height (in meters) and weight (in kilograms).
-- Calculates BMI when the "Calculate BMI" button is pressed.
-- Displays the BMI value along with a color-coded result (Underweight, Normal, Overweight, Obese).
-- Provides a brief explanation of the BMI result.
-- Responsive design for various screen sizes.
+A simple and interactive Body Mass Index (BMI) Calculator built using **HTML, CSS, and JavaScript**.
+This project helps users calculate their BMI and understand their health status with useful feedback.
 
-## Technologies Used
-- HTML: Provides the structure and layout of the calculator.
-- CSS: Styles the calculator, including responsive design for different devices.
-- Bootstrap 5: Utilized for styling, layout, and components.
-- JavaScript: Performs the BMI calculation and updates the UI dynamically.
+---
 
-## Installation
-1. Clone this repository to your local machine:
-`git clone https://github.com/yourusername/bmi-calculator.git
-`
-2. Open the `index.html` file in your web browser or host it on a web server.
+## 🚀 Features
 
-## Usage
-1. Open the BMI calculator in your web browser.
+* 📊 Calculate BMI (Metric & Imperial units)
+* ⚠️ Input validation with error messages
+* 💡 Health advice based on BMI result
+* 🔄 Reset button to clear inputs
+* 🎨 Improved UI for better user experience
+* 📱 Responsive design (works on all devices)
 
-2. Enter your height in meters (e.g., 1.75) in the "Height" field.
+---
 
-3. Enter your weight in kilograms (e.g., 70) in the "Weight" field.
+## 🧠 How It Works
 
-4. Click the ``"Calculate BMI"`` button.
+BMI is calculated using the formula:
 
-5. Your BMI value and result will be displayed along with an explanation.
+* **Metric:**
+  BMI = weight (kg) / (height (m) × height (m))
 
-## Demo
-You can try out a live demo of the BMI Calculator here.
-https://fitness-bmi-calculator.netlify.app/
+* **Imperial:**
+  BMI = (703 × weight (lbs)) / (height (inches)²)
 
-## Screenshots
+---
 
-![image](https://github.com/AbinandhMJ/BMI-Calculator/assets/99226172/71284f1c-88f8-417f-baeb-b976799192be)
-![image](https://github.com/AbinandhMJ/BMI-Calculator/assets/99226172/d4d2e28a-7a54-43fd-9024-78b8c4045bd7)
+## 📂 Project Structure
 
-To calculate a new BMI, simply update the height and weight fields and click the button again.
+```
+BMI-Calculator/
+│
+├── index.html     # Main UI structure
+├── style.css      # Styling and layout
+├── app.js         # Logic and functionality
+├── assets/        # Images and icons
+```
 
-## Acknowledgments
-- This BMI calculator is based on the World Health Organization's (WHO) BMI classification.
-- BMI calculations should not be used as a sole indicator of a person's health. Consult with a healthcare professional for a comprehensive assessment.
+---
 
-## Feedback and Contributions
-If you have any feedback or would like to contribute to this project, please create an issue or a pull request on the GitHub repository. Your input is greatly appreciated!
+## 🛠️ Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla JS)
+
+---
+
+## ✨ Improvements Added (My Contribution)
+
+* Added **Calculate BMI button**
+* Added **Reset button**
+* Implemented **input validation**
+* Displayed **error messages**
+* Added **dynamic health advice**
+* Enhanced **button UI design**
+
+---
+
+## ▶️ How to Run Locally
+
+1. Clone the repository:
+
+   ```
+   git clone <repo-link>
+   ```
+2. Open the folder
+3. Run `index.html` in your browser
+   OR use Live Server in VS Code
+
+---
+
+## 📸 Screenshot
+
+![alt text](image.png)
+
+## 🙌 Contribution
+
+Feel free to fork this repo and improve it further!
+Pull requests are welcome 🚀
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.

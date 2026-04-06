@@ -26,6 +26,7 @@
         <div class="calculator">
           <div class="form" id="form">
             <h3>Enter your details below</h3>
+            <p id="error-msg" style="color:red; font-size:14px;"></p>
             <div class="units">
               <div class="form-control">
                 <input type="radio" name="input" value="metric" id="metric" class="radio active" checked />
@@ -82,7 +83,10 @@
                   </div>
                 </div>
               </div>
-
+              <div class="btns">
+               <button id="calculate-btn" class="btn calculate">Calculate BMI</button>
+               <button id="reset-btn" class="btn reset">Reset</button>
+              </div>
             </div>
           </div>
           <div class="container-result" id="container-result">
@@ -92,8 +96,11 @@
                 <div class="result" id="result">23.4</div>
               </div>
               <div class="result-text">
-                <p>Your BMI suggests you're <span id="classification"></span>. Your ideal weight is between . <span
-                    id="min-weight"></span> - <span id="max-weight"></span> please Go to Gym</span></p>
+               <p>
+               Your BMI suggests you're <span id="classification"></span>. 
+               Your ideal weight is between <span id="min-weight"></span> - <span id="max-weight"></span>.
+               </p>
+               <p id="advice"></p>
               </div>
             </div>
             <div class="welcome-text" id="welcome">
